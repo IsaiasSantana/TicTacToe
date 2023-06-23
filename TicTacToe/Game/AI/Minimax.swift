@@ -8,15 +8,15 @@
 import Foundation
 
 struct Minimax {
-    private let win = 1
-    private let loss = -1
+    private let win = 100
+    private let loss = -100
     private let draw = 0
 
-    func minimax(at board: GameBoard, currentPlayer: Player, alpha: Int, beta: Int, maximizing: Bool) -> Int {
+    func minimax(at board: GameBoard, currentPlayer: Player, depth: Int, alpha: Int, beta: Int, maximizing: Bool) -> Int {
         if board.hasWinner() && board.player.opposite == .nought {
-            return win
+            return win - depth
         } else if board.hasWinner() && board.player.opposite == .cross {
-            return loss
+            return loss + depth
         } else if board.isDraw() {
             return draw
         }
@@ -27,7 +27,7 @@ struct Minimax {
 
         for emptyPosition in board.emptyPositions() {
             let newBoard = board.makeMove(row: emptyPosition.row, column: emptyPosition.column)
-            let result = minimax(at: newBoard, currentPlayer: currentPlayer, alpha: alpha, beta: beta, maximizing: !maximizing)
+            let result = minimax(at: newBoard, currentPlayer: currentPlayer, depth: depth + 1, alpha: alpha, beta: beta, maximizing: !maximizing)
             
             if maximizing {
                 bestEvaluation = max(bestEvaluation, result)
@@ -79,7 +79,7 @@ struct Minimax {
 
         for emptyPosition in board.emptyPositions() {
             let newBoard = board.makeMove(row: emptyPosition.row, column: emptyPosition.column)
-            let result = minimax(at: newBoard, currentPlayer: board.player.opposite, alpha: Int.min, beta: Int.max, maximizing: maximizing)
+            let result = minimax(at: newBoard, currentPlayer: board.player.opposite, depth: 0, alpha: Int.min, beta: Int.max, maximizing: maximizing)
             if result >= bestEvaluation {
                 bestEvaluation = result
                 bestMove = emptyPosition
