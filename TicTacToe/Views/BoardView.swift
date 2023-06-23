@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct BoardView: View {
     @ObservedObject private var viewModel: TicTacToeViewModel
 

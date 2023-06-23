@@ -27,6 +27,7 @@
 		07D912C72A447F7A006894A0 /* TicTacToeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D912C62A447F7A006894A0 /* TicTacToeGame.swift */; };
 		07D912C92A448353006894A0 /* TicTacToeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D912C82A448353006894A0 /* TicTacToeViewModel.swift */; };
 		07D912CC2A448429006894A0 /* RowViewContentMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D912CB2A448429006894A0 /* RowViewContentMatrix.swift */; };
+		07D912CE2A45350B006894A0 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D912CD2A45350B006894A0 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		07D912C62A447F7A006894A0 /* TicTacToeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeGame.swift; sourceTree = "<group>"; };
 		07D912C82A448353006894A0 /* TicTacToeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeViewModel.swift; sourceTree = "<group>"; };
 		07D912CB2A448429006894A0 /* RowViewContentMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewContentMatrix.swift; sourceTree = "<group>"; };
+		07D912CD2A45350B006894A0 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				07D912CB2A448429006894A0 /* RowViewContentMatrix.swift */,
+				07D912CD2A45350B006894A0 /* Strings.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			files = (
 				0733F55F2A43DF2800A8269F /* ContentView.swift in Sources */,
 				07D912C72A447F7A006894A0 /* TicTacToeGame.swift in Sources */,
+				07D912CE2A45350B006894A0 /* Strings.swift in Sources */,
 				0733F58B2A43EC9200A8269F /* BoardView.swift in Sources */,
 				07D912C92A448353006894A0 /* TicTacToeViewModel.swift in Sources */,
 				0733F5972A43FDB300A8269F /* Minimax.swift in Sources */,

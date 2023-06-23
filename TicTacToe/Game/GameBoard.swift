@@ -8,7 +8,6 @@
 import Foundation
 
 struct GameBoard {
-    typealias BoardPosition = (row: Int, column: Int)
     static let boardSize = 3
 
     let player: Player
@@ -37,8 +36,8 @@ struct GameBoard {
         board.isEmpty
     }
     
-    func emptyPositions() -> [BoardPosition] {
-        var result = [BoardPosition]()
+    func emptyPositions() -> [Move] {
+        var result = [Move]()
         for row in 0..<board.rows {
             for column in 0..<board.columns {
                 if board[row, column] == .empty {

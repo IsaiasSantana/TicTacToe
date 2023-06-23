@@ -17,6 +17,7 @@ struct ContentView: View {
                     .font(.title)
                     .foregroundStyle(.secondary)
                     .padding()
+                
                 Picker("Select AI level", selection: $viewModel.selectedAILevel) {
                     ForEach(viewModel.aiLevelOptions, id: \.self) {
                         Text($0.message)
@@ -29,6 +30,7 @@ struct ContentView: View {
                     .font(.title)
                     .foregroundStyle(.secondary)
                     .padding()
+                
                 Picker("Starts with", selection: $viewModel.initialPlayer) {
                     ForEach(viewModel.playerOptions, id: \.self) {
                         Text($0.symbol.rawValue)
@@ -52,7 +54,7 @@ struct ContentView: View {
                         Button(action: {
                             viewModel.refreshBoard()
                         }, label: {
-                           Text("Refresh")
+                            Text("Refresh")
                         })
                     }
                 }

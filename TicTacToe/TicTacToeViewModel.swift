@@ -20,7 +20,7 @@ final class TicTacToeViewModel: ObservableObject {
     }
     
     @Published var contentRows = RowViewContentMatrix(rows: TicTacToeGame.boardSize, columns: TicTacToeGame.boardSize)
-    @Published var turnMessage = "It's your turn."
+    @Published var turnMessage = Strings.playerTurn
     @Published var titleMessage = ""
     @Published var showAlert = false
     
@@ -78,9 +78,9 @@ final class TicTacToeViewModel: ObservableObject {
     private func checkWinnerOrDraw() {
         showAlert = game.hasWinner() || game.isDraw()
         if game.hasWinner() {
-            titleMessage = "Player \(game.currentBoard.player.opposite.symbol.rawValue) Win!"
+            titleMessage = Strings.winMessage(for: game.currentBoard.player.opposite)
         } else if game.isDraw() {
-            titleMessage = "Draw!"
+            titleMessage = Strings.draw
         }
     }
     
@@ -91,9 +91,9 @@ final class TicTacToeViewModel: ObservableObject {
         }
         
         if game.currentBoard.player == .cross {
-            turnMessage = "It's your turn"
+            turnMessage = Strings.playerTurn
         } else {
-            turnMessage = "It's AI turn"
+            turnMessage = Strings.aiTurn
         }
     }
 

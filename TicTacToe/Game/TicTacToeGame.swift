@@ -14,8 +14,7 @@ final class TicTacToeGame {
     static var boardSize: Int {
         GameBoard.boardSize
     }
-    
-    
+
     var currentBoard: GameBoard {
         gameBoard
     }
